@@ -1,31 +1,41 @@
 ﻿using Common;
 using Configs;
+using Main.Systems;
 using Services;
-using UnityEngine;
 
 namespace Main
 {
-    public class MainRoot : MonoBehaviour
+    public class MainRoot : ECSRoot
     {
-        private Contexts _contexts;
         private Services.Services _services;
-        
-        private void Awake()
+
+        protected override void Awake()
         {
             ShowLoadingScreen();
             
-            _contexts = Contexts.sharedInstance;
-
             _services = new Services.Services
             {
                 AssetsService = new ResourcesService(),
                 SceneService = new SceneManagerService(),
-                PlayerConfigsLibrary = new PlayerConfigsLibrary()
+                PlayerConfigsLibrary = new PlayerConfigsLibrary(),
+                UIMediationService = new UIMediationService()
             };
 
+            base.Awake();
+        }
+
+        protected override void Start()
+        {
+            base.Start();
             LoadPlayerConfigs();
             LoadUIContext();
         }
+
+        protected override InitializeSystems GetInitializeSystems() => new MainInitializeSystems(_contexts, _services);
+
+        protected override UpdateSystems GetUpdateSystems() => new MainUpdateSystems(_contexts);
+
+        protected override FixedUpdateSystems GetFixedUpdateSystems() => new MainFixedUpdateSystems(_contexts);
 
         private void LoadPlayerConfigs()
         {
@@ -48,11 +58,11 @@ namespace Main
             HideLoadingScreen();
         }
 
-        private void ShowLoadingScreen()
+        private void ShowLoadingScreen() // TODO
         {
         }
 
-        private void HideLoadingScreen()
+        private void HideLoadingScreen() // TODO
         {
         }
     }

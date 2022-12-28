@@ -8,15 +8,15 @@
 //------------------------------------------------------------------------------
 public static class MainComponentsLookup {
 
+    public const int SceneService = 0;
 
-
-    public const int TotalComponents = 0;
+    public const int TotalComponents = 1;
 
     public static readonly string[] componentNames = {
-
+        "SceneService"
     };
 
     public static readonly System.Type[] componentTypes = {
-
+        typeof(SceneService)
     };
 }

@@ -2,7 +2,7 @@
 
 namespace Services
 {
-    public interface IAssetsService
+    public interface IAssetsService : IService
     {
         T[] LoadAssets<T>(string path) where T : Object;
     }
