@@ -2,7 +2,7 @@
 
 namespace Input
 {
-    public class InputRootInput : ECSRoot
+    public class InputRoot : ECSRoot
     {
         protected override InitializeSystems GetInitializeSystems() => new InputInitializeSystems(_contexts);
 

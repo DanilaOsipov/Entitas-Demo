@@ -14,5 +14,9 @@
         public const string INPUT_INITIALIZE_SYSTEMS = "Input Initialize Systems";
         public const string INPUT_UPDATE_SYSTEMS = "Input Update Systems";
         public const string INPUT_FIXED_UPDATE_SYSTEMS = "Input Fixed Update Systems";
+        
+        public const string LEVEL_INITIALIZE_SYSTEMS = "Level Initialize Systems";
+        public const string LEVEL_UPDATE_SYSTEMS = "Level Update Systems";
+        public const string LEVEL_FIXED_UPDATE_SYSTEMS = "Level Fixed Update Systems";
     }
 }
