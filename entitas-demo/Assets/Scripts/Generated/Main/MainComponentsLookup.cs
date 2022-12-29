@@ -8,15 +8,24 @@
 //------------------------------------------------------------------------------
 public static class MainComponentsLookup {
 
-    public const int SceneService = 0;
+    public const int AssetsService = 0;
+    public const int PlayerConfigs = 1;
+    public const int SceneService = 2;
+    public const int UIMediation = 3;
 
-    public const int TotalComponents = 1;
+    public const int TotalComponents = 4;
 
     public static readonly string[] componentNames = {
-        "SceneService"
+        "AssetsService",
+        "PlayerConfigs",
+        "SceneService",
+        "UIMediation"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(SceneService)
+        typeof(AssetsService),
+        typeof(PlayerConfigs),
+        typeof(SceneService),
+        typeof(UIMediation)
     };
 }

@@ -16,8 +16,11 @@ namespace Main.Systems
         public void Initialize()
         {
             var mainContext = _contexts.main;
-            
+
+            mainContext.ReplaceAssetsService(_services.AssetsService);
             mainContext.ReplaceSceneService(_services.SceneService);
+            mainContext.ReplacePlayerConfigs(_services.PlayerConfigsLibrary);
+            mainContext.ReplaceUIMediation(_services.UIMediationService);
         }
     }
 }
