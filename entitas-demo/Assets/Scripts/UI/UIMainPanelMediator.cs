@@ -9,7 +9,10 @@
 
         private void OnStartButtonClickHandler()
         {
-            
+            var uiMediationService = _contexts.main.uIMediation.Value;
+            uiMediationService.HidePanelBy<UIMainPanelMediator>();
+            uiMediationService.ShowPanelBy<UILoadingPanelMediator>();
+
         }
     }
 }

@@ -11,6 +11,7 @@ namespace UI
         public UIPanelMediatorFactory()
         {
             _factories.Add(new UIMainPanelMediatorFactory());
+            _factories.Add(new UILoadingPanelMediatorFactory());
         }
 
         public IUIPanelMediator CreateMediator(IUIPanelView panelView, Contexts contexts)

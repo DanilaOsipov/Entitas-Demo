@@ -72,10 +72,12 @@ namespace Main
 
         private void ShowLoadingScreen() // TODO
         {
+            _services.UIMediationService.ShowPanelBy<UILoadingPanelMediator>();
         }
 
         private void HideLoadingScreen() // TODO
         {
+            _services.UIMediationService.HidePanelBy<UILoadingPanelMediator>();
             _services.UIMediationService.ShowPanelBy<UIMainPanelMediator>();
         }
     }
