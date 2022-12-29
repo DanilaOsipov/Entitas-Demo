@@ -2,8 +2,8 @@
 {
     public abstract class UIPanelMediator<T> : IUIPanelMediator where T : IUIPanelView
     {
-        private T _panelView;
-        private Contexts _contexts;
+        protected T _panelView;
+        protected Contexts _contexts;
 
         protected UIPanelMediator(T panelView, Contexts contexts)
         {

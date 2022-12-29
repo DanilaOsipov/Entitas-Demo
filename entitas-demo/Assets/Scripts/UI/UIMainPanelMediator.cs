@@ -1,9 +1,15 @@
 ﻿namespace UI
 {
-    public class UIMainPanelMediator : UIPanelMediator<UIPanelView>
+    public class UIMainPanelMediator : UIPanelMediator<UIMainPanelView>
     {
-        public UIMainPanelMediator(UIPanelView panelView, Contexts contexts) : base(panelView, contexts)
+        public UIMainPanelMediator(UIMainPanelView panelView, Contexts contexts) : base(panelView, contexts)
         {
+            _panelView.OnStartButtonClick += OnStartButtonClickHandler; 
+        }
+
+        private void OnStartButtonClickHandler()
+        {
+            
         }
     }
 }

@@ -8,5 +8,6 @@ namespace Services
         void AddMediators(IEnumerable<IUIPanelMediator> panelMediators);
         void ShowPanelBy<T>() where T : IUIPanelMediator;
         void HidePanelBy<T>() where T : IUIPanelMediator;
+        void HideAllPanels();
     }
 }

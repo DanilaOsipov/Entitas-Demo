@@ -25,6 +25,8 @@ namespace Services
             uiPanelMediator.HidePanel();
         }
 
+        public void HideAllPanels() => _panelMediators.ForEach(e => e.HidePanel());
+
         private IUIPanelMediator GetMediatorBy<T>() where T : IUIPanelMediator
         {
             return _panelMediators.FirstOrDefault(e => e.GetType() == typeof(T));

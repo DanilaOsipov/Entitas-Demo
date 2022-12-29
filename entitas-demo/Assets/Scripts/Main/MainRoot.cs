@@ -16,8 +16,6 @@ namespace Main
 
         protected override void Awake()
         {
-            ShowLoadingScreen();
-            
             _services = new Services.Services
             {
                 AssetsService = new ResourcesService(),
@@ -31,6 +29,9 @@ namespace Main
                 .Select(panelView => panelMediatorFactory.CreateMediator(panelView, _contexts))
                 .ToList();
             _services.UIMediationService.AddMediators(panelMediators);
+            _services.UIMediationService.HideAllPanels();
+            
+            ShowLoadingScreen();
 
             base.Awake();
         }
@@ -75,6 +76,7 @@ namespace Main
 
         private void HideLoadingScreen() // TODO
         {
+            _services.UIMediationService.ShowPanelBy<UIMainPanelMediator>();
         }
     }
 }
