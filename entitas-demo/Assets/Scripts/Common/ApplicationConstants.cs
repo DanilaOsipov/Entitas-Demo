@@ -5,7 +5,6 @@
         public const string PLAYER_CONFIGS_PATH = "Configs";
         
         public const string INPUT_CONTEXT_SCENE = "Input";
-        public const string PLAYER_CONTEXT_SCENE = "Player";
         public const string LEVEL_CONTEXT_SCENE = "Level";
         
         public const string MAIN_INITIALIZE_SYSTEMS = "Main Initialize Systems";
