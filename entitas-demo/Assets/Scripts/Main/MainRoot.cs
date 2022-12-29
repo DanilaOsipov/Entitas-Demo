@@ -1,12 +1,17 @@
-﻿using Common;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Common;
 using Configs;
 using Main.Systems;
 using Services;
+using UI;
+using UnityEngine;
 
 namespace Main
 {
     public class MainRoot : ECSRoot
     {
+        [SerializeField] private List<UIPanelView> _panelViews;
         private Services.Services _services;
 
         protected override void Awake()
@@ -20,6 +25,12 @@ namespace Main
                 PlayerConfigsLibrary = new PlayerConfigsLibrary(),
                 UIMediationService = new UIMediationService()
             };
+
+            var panelMediatorFactory = new UIPanelMediatorFactory();
+            var panelMediators = _panelViews
+                .Select(panelView => panelMediatorFactory.CreateMediator(panelView, _contexts))
+                .ToList();
+            _services.UIMediationService.AddMediators(panelMediators);
 
             base.Awake();
         }
@@ -49,7 +60,7 @@ namespace Main
         {
             var sceneService = _services.SceneService;
             sceneService.OnSceneLoaded += OnUIContextLoadedHandler;  
-            sceneService.LoadScene(ApplicationConstants.UI_CONTEXT_SCENE);
+            sceneService.LoadScene(ApplicationConstants.INPUT_CONTEXT_SCENE);
         }
 
         private void OnUIContextLoadedHandler(string sceneName)

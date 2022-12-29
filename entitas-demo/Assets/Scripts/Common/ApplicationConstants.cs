@@ -4,10 +4,16 @@
     {
         public const string PLAYER_CONFIGS_PATH = "Configs";
         
-        public const string UI_CONTEXT_SCENE = "UI";
+        public const string INPUT_CONTEXT_SCENE = "Input";
+        public const string PLAYER_CONTEXT_SCENE = "Player";
+        public const string LEVEL_CONTEXT_SCENE = "Level";
         
         public const string MAIN_INITIALIZE_SYSTEMS = "Main Initialize Systems";
         public const string MAIN_UPDATE_SYSTEMS = "Main Update Systems";
         public const string MAIN_FIXED_UPDATE_SYSTEMS = "Main Fixed Update Systems";
+        
+        public const string INPUT_INITIALIZE_SYSTEMS = "Input Initialize Systems";
+        public const string INPUT_UPDATE_SYSTEMS = "Input Update Systems";
+        public const string INPUT_FIXED_UPDATE_SYSTEMS = "Input Fixed Update Systems";
     }
 }

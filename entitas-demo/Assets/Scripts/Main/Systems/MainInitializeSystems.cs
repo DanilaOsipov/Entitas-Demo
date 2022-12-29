@@ -7,7 +7,7 @@ namespace Main.Systems
         public MainInitializeSystems(Contexts contexts, Services.Services services) 
             : base(ApplicationConstants.MAIN_INITIALIZE_SYSTEMS, contexts)
         {
-            
+            Add(new ServiceRegistrationSystem(contexts, services));
         }
     }
 }

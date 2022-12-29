@@ -8,12 +8,10 @@ namespace Common
         private UpdateSystems _updateSystems;
         private FixedUpdateSystems _fixedUpdateSystems;
         
-        protected Contexts _contexts;
+        protected Contexts _contexts = Contexts.sharedInstance;
 
         protected virtual void Awake()
         {
-            _contexts = Contexts.sharedInstance;
-            
             _initializeSystems = GetInitializeSystems();
             _updateSystems = GetUpdateSystems();
             _fixedUpdateSystems = GetFixedUpdateSystems();
