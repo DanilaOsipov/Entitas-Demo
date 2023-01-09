@@ -21,6 +21,10 @@ namespace Main.Systems
             mainContext.ReplaceSceneService(_services.SceneService);
             mainContext.ReplacePlayerConfigs(_services.PlayerConfigsLibrary);
             mainContext.ReplaceUIMediation(_services.UIMediationService);
+            
+            var inputContext = _contexts.input;
+            
+            inputContext.ReplaceInputService(_services.InputService);
         }
     }
 }

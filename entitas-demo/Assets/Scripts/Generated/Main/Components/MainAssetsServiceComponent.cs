@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Main;
+
 public partial class MainContext {
 
     public MainEntity assetsServiceEntity { get { return GetGroup(MainMatcher.AssetsService).GetSingleEntity(); } }

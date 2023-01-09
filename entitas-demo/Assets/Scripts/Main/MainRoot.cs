@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Main
 {
-    public class MainRoot : ECSRoot
+    public class MainRoot : ECSRoot // TODO UI as separated context
     {
         [SerializeField] private List<UIPanelView> _panelViews;
         private Services.Services _services;
@@ -21,7 +21,8 @@ namespace Main
                 AssetsService = new ResourcesService(),
                 SceneService = new SceneManagerService(),
                 PlayerConfigsLibrary = new PlayerConfigsLibrary(),
-                UIMediationService = new UIMediationService()
+                UIMediationService = new UIMediationService(),
+                InputService = new UnityInputService()
             };
 
             var panelMediatorFactory = new UIPanelMediatorFactory();
@@ -70,12 +71,12 @@ namespace Main
             HideLoadingScreen();
         }
 
-        private void ShowLoadingScreen() // TODO
+        private void ShowLoadingScreen()
         {
             _services.UIMediationService.ShowPanelBy<UILoadingPanelMediator>();
         }
 
-        private void HideLoadingScreen() // TODO
+        private void HideLoadingScreen()
         {
             _services.UIMediationService.HidePanelBy<UILoadingPanelMediator>();
             _services.UIMediationService.ShowPanelBy<UIMainPanelMediator>();

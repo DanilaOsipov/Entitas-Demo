@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Main;
+
 public static class MainComponentsLookup {
 
     public const int AssetsService = 0;
